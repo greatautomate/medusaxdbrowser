@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: medusaxd-web-browser
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MEDUSAXD_API_KEY
+        sync: false
+

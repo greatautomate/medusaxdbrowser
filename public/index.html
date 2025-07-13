@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedusaXD Web Browser</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@hyperbeam/web@latest/dist/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>🐍 MedusaXD</h1>
+                <span>Advanced Web Browser</span>
+            </div>
+            <div class="controls">
+                <button id="newSessionBtn" class="btn btn-primary">New Session</button>
+                <button id="terminateBtn" class="btn btn-danger" disabled>Terminate</button>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <div class="session-info">
+                <span id="sessionStatus">No active session</span>
+            </div>
+            <div class="browser-controls">
+                <select id="deviceType">
+                    <option value="desktop">Desktop</option>
+                    <option value="mobile">Mobile</option>
+                </select>
+                <input type="text" id="navigationUrl" placeholder="Enter URL to navigate...">
+                <button id="navigateBtn" class="btn btn-secondary">Navigate</button>
+            </div>
+        </div>
+
+        <div class="browser-container">
+            <div id="browserFrame" class="browser-frame">
+                <div class="placeholder">
+                    <div class="placeholder-content">
+                        <h2>Welcome to MedusaXD Web Browser</h2>
+                        <p>Click "New Session" to start browsing</p>
+                        <div class="features">
+                            <div class="feature">
+                                <h3>🚀 Fast & Secure</h3>
+                                <p>Lightning-fast virtual browsing with enterprise-grade security</p>
+                            </div>
+                            <div class="feature">
+                                <h3>🌐 Universal Access</h3>
+                                <p>Access any website from anywhere in the world</p>
+                            </div>
+                            <div class="feature">
+                                <h3>💻 Cross-Platform</h3>
+                                <p>Works on desktop, mobile, and tablet devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loadingIndicator">
+            <div class="spinner"></div>
+            <span>Initializing browser session...</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
