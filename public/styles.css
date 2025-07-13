@@ -1,249 +1,43 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    height: 100vh;
-    overflow: hidden;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    max-width: 1400px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    background: #2c3e50;
+.feature-notice {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #f39c12;
     color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    max-width: 300px;
 }
 
-.logo h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.logo span {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.controls {
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background: #3498db;
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #2980b9;
-}
-
-.btn-danger {
-    background: #e74c3c;
-    color: white;
-}
-
-.btn-danger:hover {
-    background: #c0392b;
-}
-
-.btn-secondary {
-    background: #95a5a6;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background: #7f8c8d;
-}
-
-.btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: #34495e;
-    color: white;
-    border-bottom: 1px solid #2c3e50;
-}
-
-.session-info {
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-.browser-controls {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.browser-controls select,
-.browser-controls input {
-    padding: 8px 12px;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.browser-controls input {
-    width: 300px;
-}
-
-.browser-container {
-    flex: 1;
+.notice-content {
     position: relative;
-    overflow: hidden;
 }
 
-.browser-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: white;
+.notice-content h4 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
 }
 
-.placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-}
-
-.placeholder-content {
-    text-align: center;
-    max-width: 600px;
-    padding: 40px;
-}
-
-.placeholder-content h2 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-size: 2.5rem;
-}
-
-.placeholder-content p {
-    color: #7f8c8d;
-    margin-bottom: 40px;
-    font-size: 1.2rem;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.feature {
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.feature h3 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-.feature p {
-    color: #7f8c8d;
+.notice-content p {
+    margin: 0;
     font-size: 0.9rem;
     line-height: 1.4;
 }
 
-.loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: none;
+.notice-content button {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    z-index: 1000;
 }
-
-.loading.show {
-    display: flex;
-}
-
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #3498db;
-    border-top: 4px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-right: 20px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .toolbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .browser-controls {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .browser-controls input {
-        width: 100%;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-}
-
